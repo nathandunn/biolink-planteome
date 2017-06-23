@@ -1,10 +1,10 @@
-<tool id="monarch-search-operations" name="Search Operations" version="0.1.0">
+<tool id="planteome-search-operations" name="Search Operations" version="0.1.0">
 	<macros>
 		<import>macros.xml</import>
 	</macros>
 	<expand macro="frontmatter" />
 	<command><![CDATA[
-curl --silent -X GET --header 'Accept: application/json' 'https://api.monarchinitiative.org/api/search/entity/$input?rows=$rows&fetch_objects=true' > $output
+curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteome.org/apiapi/search/entity/$input?rows=$rows&fetch_objects=true' > $output
 	]]></command>
 	<inputs>
 		<param  name="input" type="text" format="txt" multiple="false" label="Search Term (e.g. shh, parkinson, femur)" />

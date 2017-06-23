@@ -1,10 +1,10 @@
-<tool id="monarch-phenotype-gene-associations" name="Phenotype Gene Associations" version="0.1.0">
+<tool id="planteome-phenotype-gene-associations" name="Phenotype Gene Associations" version="0.1.0">
 	<macros>
 		<import>macros.xml</import>
 	</macros>
 	<expand macro="frontmatter" />
 	<command><![CDATA[
-curl --silent -X GET --header 'Accept: application/json' 'https://api.monarchinitiative.org/api/bioentity/phenotype/$input/gene/$taxid/ids?rows=$rows&fetch_objects=true' > $output
+curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteome.org/apiapi/bioentity/phenotype/$input/gene/$taxid/ids?rows=$rows&fetch_objects=true' > $output
 	]]></command>
 	<inputs>
 		<param  name="input" type="text" format="txt" multiple="false" label="Phenotype ID (e.g. MP:0001569)" />

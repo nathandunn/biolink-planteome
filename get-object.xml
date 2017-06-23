@@ -4,7 +4,7 @@
 	</macros>
 	<expand macro="frontmatter" />
 	<command><![CDATA[
-curl --silent -X GET --header 'Accept: application/json' 'https://api.planteomeinitiative.org/api/bioentity/$type$input$associations?rows=$rows&fetch_objects=true' > $output
+curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteome.org/apiapi/bioentity/$type$input$associations?rows=$rows&fetch_objects=true' > $output
 	]]></command>
 	<inputs>
 		<param  name="input" type="text" format="txt" multiple="false" label="Object ID" />

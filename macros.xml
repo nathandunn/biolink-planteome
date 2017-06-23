@@ -9,8 +9,8 @@
     </xml>
     <xml name="citations">
         <help><![CDATA[
-        Pulls data from Monarch Initiative BioLink API web services as JSON.
-		https://api.monarchinitiative.org/api/
+        Pulls data from planteome Initiative BioLink API web services as JSON.
+		http://biolink.planteome.org/apiapi/
     ]]></help>
         <citations>
             <citation type="doi">doi:10.5281/zenodo.815635</citation>

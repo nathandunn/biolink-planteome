@@ -5,13 +5,13 @@
     <expand macro="frontmatter" />
     <command><![CDATA[
 	#if $type == 'find'
-        curl --silent -X GET --header 'Accept: application/json' 'https://api.planteomeinitiative.org/api/association/$type/?rows=$rows&fetch_objects=true&subject=$subject' > $output
+        curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteome.org/apiapi/association/$type/?rows=$rows&fetch_objects=true&subject=$subject' > $output
 	#else if $type == 'from'
-        curl --silent -X GET --header 'Accept: application/json' 'https://api.planteomeinitiative.org/api/association/$type/$subject?rows=$rows&fetch_objects=true' > $output
+        curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteome.org/apiapi/association/$type/$subject?rows=$rows&fetch_objects=true' > $output
 	#else if $type == 'to'
-        curl --silent -X GET --header 'Accept: application/json' 'https://api.planteomeinitiative.org/api/association/$type/$object?rows=$rows&fetch_objects=true' > $output
+        curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteome.org/apiapi/association/$type/$object?rows=$rows&fetch_objects=true' > $output
 	#else if $type == 'between'
-        curl --silent -X GET --header 'Accept: application/json' 'https://api.planteomeinitiative.org/api/association/$type/$subject/$object?rows=$rows&fetch_objects=true' > $output
+        curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteome.org/apiapi/association/$type/$subject/$object?rows=$rows&fetch_objects=true' > $output
 	#end if
 	]]></command>
     <inputs>
