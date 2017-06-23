@@ -1,7 +1,8 @@
 # Biolink-planteome
 
 [![Build Status](https://travis-ci.org/nathandunn/biolink-planteome.svg?branch=master)](https://travis-ci.org/nathandunn/biolink-planteome)
-[![DOI](https://zenodo.org/badge/94568425.svg)](https://zenodo.org/badge/latestdoi/94568425)
+[![DOI](https://zenodo.org/badge/94568147.svg)](https://zenodo.org/badge/latestdoi/94568147)
+
 
 
 Wrapper around the [planteome Iniatitive Biolink API](https://biolink.planteome.org/api/). 
