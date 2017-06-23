@@ -1,0 +1,5 @@
+categories: [Web Services]
+description: Exposes the Planteome Biolink API (http://biolink.planteome.org/api/)
+long_description: Provides ontology-driven associations variants, phenotypes, diseases, genes, genotypes, and other bioentities as JSON from the Monarch Initiative 'https://monarchinitiative.org' using the biolink api (https://github.com/biolink/biolink-api) exposed for Planteome (http://biolink.planteome.org/api/).
+name: biolinkplanteome
+owner: nathandunn
