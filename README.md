@@ -6,7 +6,7 @@
 
 Wrapper around the [planteome Iniatitive Biolink API](https://biolink.planteome.org/api/). 
 
-Available on the [Galaxy Toolshed](https://toolshed.g2.bx.psu.edu/repository?repository_id=c46e72ccdb506940).
+Available on the [Galaxy Toolshed](https://toolshed.g2.bx.psu.edu/repository?repository_id=6a4f55387fe48fbd).
 
 The [planteome Intiative](http://planteome.org/) is a warehouse that integrates, aligns, and re-distributes cross-species gene, genotype, variant, disease, and phenotype data using ontology associations.
 
