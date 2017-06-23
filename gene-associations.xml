@@ -1,0 +1,49 @@
+<tool id="monarch-gene-associations" name="Gene Associations" version="0.1.0">
+    <macros>
+        <import>macros.xml</import>
+    </macros>
+    <expand macro="frontmatter" />
+    <command><![CDATA[
+curl --silent -X GET --header 'Accept: application/json' 'https://api.monarchinitiative.org/api/bioentity/gene/$input/$association/?rows=$rows&fetch_objects=true' > $output
+	]]></command>
+    <inputs>
+        <param name="input" type="text" format="txt" multiple="false" label="Gene"/>
+        <param name="association" type="select" multiple="false" display="radio" label="Type">
+            <option value="diseases">Diseases (e.g,. NCBIGene:4750, Orphanet:173505)</option>
+            <option value="function">Function (e.g,. NCBIGene:4750, Orphanet:173505)</option>
+            <option value="homologs">Homologs (e.g,. NCBIGene:4750, Orphanet:173505)</option>
+            <option value="interactions">Interactions (e.g,. NCBIGene:4750, Orphanet:173505)</option>
+            <option value="phenotypes">Phenotypes (e.g,. NCBIGene:4750, Orphanet:173505)</option>
+        </param>
+        <param name="rows" type="text" format="txt" multiple="false" value="1000" label="Num Rows"/>
+    </inputs>
+    <expand macro="outputs" />
+    <tests>
+        <test>
+            <param name="input" value="NCBIGene:4750"/>
+            <param name="association" value="diseases"/>
+            <output name="output" file="diseases-for-gene.json"/>
+        </test>
+        <test>
+            <param name="input" value="NCBIGene:4750"/>
+            <param name="association" value="function"/>
+            <output name="output" file="function-for-gene.json"/>
+        </test>
+        <test>
+            <param name="input" value="NCBIGene:4750"/>
+            <param name="association" value="homologs"/>
+            <output name="output" file="homologs-for-gene.json"/>
+        </test>
+        <test>
+            <param name="input" value="NCBIGene:4750"/>
+            <param name="association" value="interactions"/>
+            <output name="output" file="interactions-for-gene.json"/>
+        </test>
+        <test>
+            <param name="input" value="NCBIGene:4750"/>
+            <param name="association" value="phenotypes"/>
+            <output name="output" file="phenotypes-for-gene.json"/>
+        </test>
+    </tests>
+    <expand macro="citations" />
+</tool>

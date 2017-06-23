@@ -1,0 +1,46 @@
+<tool id="planteome-bulk-operations" name="Bulk Operations" version="0.1.0">
+    <macros>
+        <import>macros.xml</import>
+    </macros>
+    <expand macro="frontmatter" />
+    <command><![CDATA[
+curl --silent -X GET --header 'Accept: application/json' 'https://api.planteomeinitiative.org/api/mart/$association/$object_category/$taxon?rows=$rows&fetch_objects=true' > $output
+	]]></command>
+    <inputs>
+        <param name="taxon" type="text" format="txt" multiple="false" label="Taxon (e.g. NCBITaxon:9606)"/>
+        <param name="object_category" type="text" format="txt" multiple="false" label="Object Category (e.g. phenotype, disease)"/>
+        <param name="association" type="select" multiple="false" display="radio" label="Type">
+            <option value="gene">Gene</option>
+            <option value="disease">Disease</option>
+            <option value="case">Case</option>
+        </param>
+        <param name="rows" type="text" format="txt" multiple="false" value="1000" label="Num Rows"/>
+    </inputs>
+    <expand macro="outputs" />
+    <tests>
+        <!--NOTE: these take way too long to run because fo the large amount of data involved-->
+        <!--<test>-->
+            <!--<param name="type" value="gene"/>-->
+            <!--<param name="taxon" value="NCBITaxon:9606"/>-->
+            <!--<param name="rows" value="1"/>-->
+            <!--<param name="object_category" value="phenotype"/>-->
+            <!--<output name="output" file="gene-mart-for-phenotype.json"/>-->
+        <!--</test>-->
+        <!--<test>-->
+            <!--<param name="type" value="disease"/>-->
+            <!--<param name="taxon" value="NCBITaxon:9606"/>-->
+            <!--<param name="rows" value="1"/>-->
+            <!--<param name="object_category" value="phenotype"/>-->
+            <!--<output name="output" file="disease-mart-for-phenotype.json"/>-->
+        <!--</test>-->
+        <!--<test>-->
+            <!--<param name="type" value="case"/>-->
+            <!--<param name="taxon" value="NCBITaxon:9606"/>-->
+            <!--<param name="rows" value="1"/>-->
+            <!--<param name="object_category" value="phenotype"/>-->
+            <!--<output name="output" file="case-mart-for-phenotype.json"/>-->
+        <!--</test>-->
+    </tests>
+    <expand macro="citations" />
+</tool>
+

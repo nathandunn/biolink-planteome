@@ -1,0 +1,38 @@
+<tool id="planteome-variant-associations" name="Variant Associations" version="0.1.0">
+	<macros>
+		<import>macros.xml</import>
+	</macros>
+	<expand macro="frontmatter" />
+	<command><![CDATA[
+curl --silent -X GET --header 'Accept: application/json' 'https://api.planteomeinitiative.org/api/bioentity/variant/$input/$association/?rows=$rows&fetch_objects=true' > $output
+	]]></command>
+	<inputs>
+		<param  name="input" type="text" format="txt" multiple="false" label="Variant (e.g. ZFIN:ZDB-ALT-010427-8, ClinVarVariant:39783)" />
+		<param  name="association" type="select" multiple="false" display="radio" label="Type">
+			<option value="genes">Genes</option>
+			<option value="genotypes">Genotypes</option>
+			<option value="phenotypes">Phenotypes</option>
+		</param>
+		<param name="rows" type="text" format="txt" multiple="false" value="1000" label="Num Rows"/>
+	</inputs>
+	<expand macro="outputs" />
+	<tests>
+		<test>
+			<param name="input" value="ZFIN:ZDB-ALT-010427-8"/>
+			<param name="association" value="genes"/>
+			<output name="output" file="genes-for-variant.json"/>
+		</test>
+		<test>
+			<param name="input" value="ZFIN:ZDB-ALT-010427-8"/>
+			<param name="association" value="genotypes"/>
+			<output name="output" file="genotypes-for-variant.json"/>
+		</test>
+		<test>
+			<param name="input" value="ClinVarVariant:65929"/>
+			<param name="association" value="phenotypes"/>
+			<output name="output" file="phenotypes-for-variant.json"/>
+		</test>
+	</tests>
+	<expand macro="citations" />
+</tool>
+

@@ -1,0 +1,39 @@
+<tool id="planteome-substance-associations" name="Substance Associations" version="0.1.0">
+	<macros>
+		<import>macros.xml</import>
+	</macros>
+	<expand macro="frontmatter" />
+	<command><![CDATA[
+curl --silent -X GET --header 'Accept: application/json' 'https://api.planteomeinitiative.org/api/bioentity/substance/$input/$association/?rows=$rows&fetch_objects=true' > $output
+	]]></command>
+	<inputs>
+		<param  name="input" type="text" format="txt" multiple="false" label="Substance (e.g. CHEBI:40036)" />
+		<param  name="association" type="select" multiple="false" display="radio" label="Type">
+			<option value="participant_in">Participant In</option>
+			<option value="roles">Roles</option>
+			<!--<option value="treats">Treats</option>-->
+		</param>
+		<param name="rows" type="text" format="txt" multiple="false" value="1000" label="Num Rows"/>
+	</inputs>
+	<expand macro="outputs" />
+	<tests>
+		<test>
+			<param name="input" value="CHEBI:40036"/>
+			<param name="association" value="participant_in"/>
+			<output name="output" file="participatant_in-for-substance.json"/>
+		</test>
+		<test>
+			<param name="input" value="CHEBI:40036"/>
+			<param name="association" value="roles"/>
+			<output name="output" file="roles-for-substance.json"/>
+		</test>
+		<!--seems to break-->
+		<!--<test>-->
+			<!--<param name="input" value="CHEBI:40036"/>-->
+			<!--<param name="association" value="treats"/>-->
+			<!--<output name="output" file="treats-for-substance.json"/>-->
+		<!--</test>-->
+	</tests>
+	<expand macro="citations" />
+</tool>
+

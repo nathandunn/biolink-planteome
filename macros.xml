@@ -1,0 +1,25 @@
+<macros>
+    <xml name="frontmatter">
+        <requirements>
+        </requirements>
+        <stdio>
+            <exit_code range="1:"/>
+        </stdio>
+        <yield/>
+    </xml>
+    <xml name="citations">
+        <help><![CDATA[
+        Pulls data from Monarch Initiative BioLink API web services as JSON.
+		https://api.monarchinitiative.org/api/
+    ]]></help>
+        <citations>
+            <citation type="doi">doi:10.5281/zenodo.815635</citation>
+        </citations>
+        <yield/>
+    </xml>
+    <xml name="outputs">
+        <outputs>
+            <data name="output" format="json"/>
+        </outputs>
+    </xml>
+</macros>
