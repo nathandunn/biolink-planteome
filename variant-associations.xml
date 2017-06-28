@@ -4,7 +4,7 @@
 	</macros>
 	<expand macro="frontmatter" />
 	<command><![CDATA[
-curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteome.org/apiapi/bioentity/variant/$input/$association/?rows=$rows&fetch_objects=true' > $output
+curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteome.org/api/bioentity/variant/$input/$association/?rows=$rows&fetch_objects=true' > $output
 	]]></command>
 	<inputs>
 		<param  name="input" type="text" format="txt" multiple="false" label="Variant (e.g. ZFIN:ZDB-ALT-010427-8, ClinVarVariant:39783)" />

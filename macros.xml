@@ -10,7 +10,7 @@
     <xml name="citations">
         <help><![CDATA[
         Pulls data from planteome Initiative BioLink API web services as JSON.
-		http://biolink.planteome.org/apiapi/
+		http://biolink.planteome.org/api/
     ]]></help>
         <citations>
             <citation type="doi">doi:10.5281/zenodo.815635</citation>
