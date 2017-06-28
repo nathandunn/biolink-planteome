@@ -7,13 +7,13 @@
 curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteome.org/api/bioentity/$input/associations/?rows=$rows&fetch_objects=true' > $output
 	]]></command>
 	<inputs>
-		<param  name="input" type="text" format="txt" multiple="false" label="Bioentity ID (e.g. ZFIN:ZDB-ALT-010427-8)" />
+		<param  name="input" type="text" format="txt" multiple="false" label="Bioentity ID (e.g. EnsemblPlants:GRMZM2G061969_T01)" />
 		<param name="rows" type="text" format="txt" multiple="false" value="1000" label="Num Rows"/>
 	</inputs>
 	<expand macro="outputs" />
 	<tests>
 		<test>
-			<param name="input" value="ZFIN:ZDB-ALT-010427-8"/>
+			<param name="input" value="EnsemblPlants:GRMZM2G061969_T01"/>
 			<output name="output" file="associations-for-variant.json"/>
 		</test>
 	</tests>
