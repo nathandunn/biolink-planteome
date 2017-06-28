@@ -7,7 +7,7 @@
 curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteome.org/api/bioentity/disease/$input/$association/?rows=$rows&fetch_objects=true' > $output
 	]]></command>
 	<inputs>
-	    <param  name="input" type="text" format="txt" multiple="false" label="Disease  (e.g. OMIM:605543, DOID:678)" />
+	    <param  name="input" type="text" format="txt" multiple="false" label="Disease (e.g. GO:0033365)" />
 		<param  name="association" type="select" multiple="false" display="radio" label="Type">
 			<option value="genes">Genes</option>
 			<option value="models">Models</option>
@@ -18,17 +18,17 @@ curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteo
 	<expand macro="outputs" />
 	 <tests>
 		 <test>
-			 <param name="input" value="OMIM:605543"/>
+			 <param name="input" value="GO:0033365"/>
 			 <param name="association" value="genes"/>
 			 <output name="output" file="genes-for-disease.json"/>
 		 </test>
 		 <test>
-			 <param name="input" value="OMIM:605543"/>
+			 <param name="input" value="GO:0033365"/>
 			 <param name="association" value="models"/>
 			 <output name="output" file="models-for-disease.json"/>
 		 </test>
 		 <test>
-			 <param name="input" value="OMIM:605543"/>
+			 <param name="input" value="GO:0033365"/>
 			 <param name="association" value="phenotypes"/>
 			 <output name="output" file="phenotypes-for-disease.json"/>
 		 </test>
