@@ -7,7 +7,7 @@
 curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteome.org/api/search/entity/$input?rows=$rows&fetch_objects=true' > $output
 	]]></command>
 	<inputs>
-		<param  name="input" type="text" format="txt" multiple="false" label="Search Term (e.g. shh, parkinson, femur)" />
+		<param  name="input" type="text" format="txt" multiple="false" label="Search Term (e.g. leaf, blight, cell)" />
 		<param name="rows" type="text" format="txt" multiple="false" value="1000" label="Num Rows"/>
 	</inputs>
 	<expand macro="outputs" />
