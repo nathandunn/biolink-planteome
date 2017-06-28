@@ -15,8 +15,8 @@
 	#end if
 	]]></command>
     <inputs>
-        <param name="subject" type="text" format="txt" multiple="false" label="Subject"/>
-        <param name="object" type="text" format="txt" multiple="false" label="Object"/>
+        <param name="subject" type="text" format="txt" multiple="false" label="Subject (e.g., EnsemblPlants:GRMZM2G061969_T01)"/>
+        <param name="object" type="text" format="txt" multiple="false" label="Object (e.g., GO:0005783)"/>
         <param name="type" type="select" multiple="false" display="radio" label="Type">
             <option value="find">Find (subject)</option>
             <option value="from">From (subject)</option>

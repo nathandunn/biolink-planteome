@@ -12,10 +12,11 @@ curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteo
 	</inputs>
 	<expand macro="outputs" />
 	<tests>
-		<test>
-			<param name="input" value="EnsemblPlants:GRMZM2G061969_T01"/>
-			<output name="output" file="associations-for-variant.json"/>
-		</test>
+		<!--Seems to overload the server-->
+		<!--<test>-->
+			<!--<param name="input" value="EnsemblPlants:GRMZM2G061969_T01"/>-->
+			<!--<output name="output" file="associations-for-variant.json"/>-->
+		<!--</test>-->
 	</tests>
 	<expand macro="citations" />
 </tool>
