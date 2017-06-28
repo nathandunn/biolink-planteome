@@ -1,5 +1,5 @@
 #!/bin/bash
 
-planemo t `cat tests.txt`
+planemo t `cat tools.txt`
 
 
