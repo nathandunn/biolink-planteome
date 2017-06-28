@@ -10,8 +10,8 @@ curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteo
 		<param  name="input" type="text" format="txt" multiple="false" label="Object ID" />
 		<param  name="type" type="select" multiple="false" display="radio" label="Type">
 			<option value="">Any</option>
-			<option value="gene/">Gene (e.g. NCBIGene:84570)</option>
-			<option value="genotype/">Genotype (e.g. ZFIN:ZDB-FISH-150901-6607)</option>
+			<option value="gene/">Gene (e.g. MaizeGDB:9024907)</option>
+			<!--<option value="genotype/">Genotype (e.g. ZFIN:ZDB-FISH-150901-6607)</option>-->
 		</param>
 		<param  name="associations" type="select" multiple="false" display="radio" label="Render Associations">
 			<option value="/associations/">True</option>
@@ -22,23 +22,23 @@ curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteo
 	<expand macro="outputs" />
 	<tests>
 		<test>
-			<param name="input" value="OMIM:605543"/>
+			<param name="input" value="MaizeGDB:9024907"/>
 			<param name="type" value=""/>
 			<output name="output" file="bioentity-object-for-disease.json"/>
 		</test>
 		<test>
-			<param name="input" value="OMIM:605543"/>
+			<param name="input" value="MaizeGDB:9024907"/>
 			<param name="type" value=""/>
 			<param name="associations" value="/associations/"/>
 			<output name="output" file="bioentity-associations-for-disease.json"/>
 		</test>
 		<test>
-			<param name="input" value="NCBIGene:84570"/>
+			<param name="input" value="MaizeGDB:9024907"/>
 			<param name="association" value="gene/"/>
 			<output name="output" file="bioentity-object-for-gene.json"/>
 		</test>
 		<test>
-			<param name="input" value="ZFIN:ZDB-FISH-150901-6607"/>
+			<param name="input" value="MaizeGDB:9024907"/>
 			<param name="association" value="genotype/"/>
 			<output name="output" file="bioentity-object-for-genotype.json"/>
 		</test>
