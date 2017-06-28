@@ -28,23 +28,23 @@
     <expand macro="outputs" />
     <tests>
         <test>
-            <param name="subject" value="NCBIGene:84570"/>
+            <param name="subject" value="EnsemblPlants:GRMZM2G061969_T01"/>
             <param name="type" value="find"/>
             <output name="output" file="find-associations-for-subject.json"/>
         </test>
         <test>
-            <param name="subject" value="NCBIGene:84570"/>
+            <param name="subject" value="EnsemblPlants:GRMZM2G061969_T01"/>
             <param name="type" value="from"/>
             <output name="output" file="from-associations-for-subject.json"/>
         </test>
         <test>
-            <param name="object" value="MP:0013765"/>
+            <param name="object" value="GO:0005783"/>
             <param name="type" value="to"/>
             <output name="output" file="to-associations-for-object.json"/>
         </test>
         <test>
-            <param name="subject" value="MGI:1342287"/>
-            <param name="object" value="MP:0013765"/>
+            <param name="subject" value="EnsemblPlants:GRMZM2G061969_T01"/>
+            <param name="object" value="GO:0005783"/>
             <param name="type" value="between"/>
             <output name="output" file="between-associations.json"/>
         </test>
