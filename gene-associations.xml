@@ -7,40 +7,40 @@
 curl --silent -X GET --header 'Accept: application/json' 'http://biolink.planteome.org/api/bioentity/gene/$input/$association/?rows=$rows&fetch_objects=true' > $output
 	]]></command>
     <inputs>
-        <param name="input" type="text" format="txt" multiple="false" label="Gene"/>
+        <param name="input" type="text" format="txt" multiple="false" label="Gene (e.g. MaizeGDB:9024907)"/>
         <param name="association" type="select" multiple="false" display="radio" label="Type">
-            <option value="diseases">Diseases (e.g,. NCBIGene:4750, Orphanet:173505)</option>
-            <option value="function">Function (e.g,. NCBIGene:4750, Orphanet:173505)</option>
-            <option value="homologs">Homologs (e.g,. NCBIGene:4750, Orphanet:173505)</option>
-            <option value="interactions">Interactions (e.g,. NCBIGene:4750, Orphanet:173505)</option>
-            <option value="phenotypes">Phenotypes (e.g,. NCBIGene:4750, Orphanet:173505)</option>
+            <option value="diseases">Diseases</option>
+            <option value="function">Function</option>
+            <!--<option value="homologs">Homologs</option>-->
+            <!--<option value="interactions">Interactions</option>-->
+            <option value="phenotypes">Phenotypes</option>
         </param>
         <param name="rows" type="text" format="txt" multiple="false" value="1000" label="Num Rows"/>
     </inputs>
     <expand macro="outputs" />
     <tests>
         <test>
-            <param name="input" value="NCBIGene:4750"/>
+            <param name="input" value="MaizeGDB:9024907"/>
             <param name="association" value="diseases"/>
             <output name="output" file="diseases-for-gene.json"/>
         </test>
         <test>
-            <param name="input" value="NCBIGene:4750"/>
+            <param name="input" value="MaizeGDB:9024907"/>
             <param name="association" value="function"/>
             <output name="output" file="function-for-gene.json"/>
         </test>
+        <!--<test>-->
+            <!--<param name="input" value="MaizeGDB:9024907"/>-->
+            <!--<param name="association" value="homologs"/>-->
+            <!--<output name="output" file="homologs-for-gene.json"/>-->
+        <!--</test>-->
+        <!--<test>-->
+            <!--<param name="input" value="MaizeGDB:9024907"/>-->
+            <!--<param name="association" value="interactions"/>-->
+            <!--<output name="output" file="interactions-for-gene.json"/>-->
+        <!--</test>-->
         <test>
-            <param name="input" value="NCBIGene:4750"/>
-            <param name="association" value="homologs"/>
-            <output name="output" file="homologs-for-gene.json"/>
-        </test>
-        <test>
-            <param name="input" value="NCBIGene:4750"/>
-            <param name="association" value="interactions"/>
-            <output name="output" file="interactions-for-gene.json"/>
-        </test>
-        <test>
-            <param name="input" value="NCBIGene:4750"/>
+            <param name="input" value="MaizeGDB:9024907"/>
             <param name="association" value="phenotypes"/>
             <output name="output" file="phenotypes-for-gene.json"/>
         </test>
